@@ -17,12 +17,16 @@
             android:orientation="horizontal"
             android:id="@+id/rdo_group">
             <RadioButton
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:id="@+id/rdo_student"
                 android:text="Student"/>
             <RadioButton
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -44,6 +48,8 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <TextView
+                        android:textColor="@color/color_white"
+                        android:textStyle="bold"
                         android:layout_gravity="center_vertical"
                         android:textAlignment="center"
                         android:layout_width="0dp"
@@ -51,6 +57,8 @@
                         android:layout_weight="1"
                         android:text="@string/name"/>
                     <TextView
+                        android:textColor="@color/color_white"
+                        android:textStyle="bold"
                         android:layout_gravity="center_vertical"
                         android:textAlignment="center"
                         android:layout_width="0dp"
@@ -58,6 +66,8 @@
                         android:layout_weight="1"
                         android:text="@string/phone"/>
                     <TextView
+                        android:textColor="@color/color_white"
+                        android:textStyle="bold"
                         android:layout_gravity="center_vertical"
                         android:textAlignment="center"
                         android:layout_width="0dp"
@@ -65,6 +75,8 @@
                         android:layout_weight="1"
                         android:text="@string/email"/>
                     <TextView
+                        android:textColor="@color/color_white"
+                        android:textStyle="bold"
                         android:layout_gravity="center_vertical"
                         android:textAlignment="center"
                         android:layout_width="0dp"
@@ -73,15 +85,21 @@
                         android:text="@string/address"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/user_registration_recycler"
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/user_registration_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </ScrollView>
+
         </LinearLayout>
 
 
 
     </LinearLayout>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_add_new_user"

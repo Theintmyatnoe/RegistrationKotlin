@@ -9,10 +9,13 @@
     <string name="student">Student</string>
     <string name="assign">Assign</string>
     <string name="course">Course</string>
+    <string name="str_class">Class</string>
     <string name="save">Save</string>
 
     <string name="name">Name</string>
     <string name="phone">Phone</string>
     <string name="email">Email</string>
     <string name="address">Address</string>
+
+    <string name="logout">Logout</string>
 </resources>

@@ -4,15 +4,18 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.registrationkotlin.database.dao.RegisterUsersDAO
-import com.example.registrationkotlin.database.dao.UsersDAO
-import com.example.registrationkotlin.database.model.RegisterUsers
-import com.example.registrationkotlin.database.model.Users
+import com.example.registrationkotlin.database.dao.*
+import com.example.registrationkotlin.database.model.*
 
-@Database(entities = [Users::class, RegisterUsers::class],version = 1)
+@Database(entities = [Users::class, RegisterUsers::class,Classes::class,Course::class,AssignCourse::class,AssignClass::class],version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun getUserDAO(): UsersDAO
     abstract fun getRegisterUserDao(): RegisterUsersDAO
+    abstract fun getClassesDAO():ClassesDAO
+    abstract fun getCourseDAO():CourseDAO
+    abstract fun getAssignCourseDAO():AssignCourseDAO
+    abstract fun getAssignClassDAO():AssignClassDAO
+
     companion object {
         @Volatile
         private var INSTANCE: AppDatabase? = null

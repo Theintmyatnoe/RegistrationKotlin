@@ -22,6 +22,7 @@ class AddNewUserActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_new_user)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val database= AppDatabase.getDatabase(this)
 
@@ -32,6 +33,7 @@ class AddNewUserActivity : AppCompatActivity() {
         }
 
         type=intent.getStringExtra("type")
+
 
         getUserIDFromIntent=intent.getStringExtra("SelectUserID")
 
@@ -106,6 +108,12 @@ class AddNewUserActivity : AppCompatActivity() {
     override fun onBackPressed() {
         goRegistration()
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        goRegistration()
+        return true
+    }
+
     private fun goRegistration() {
         var intent= Intent(this,UserRegistrationActivity::class.java)
         startActivity(intent)

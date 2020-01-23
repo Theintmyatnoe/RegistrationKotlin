@@ -23,6 +23,10 @@
         <activity android:name=".activity.AssignCourseActivity"/>
         <activity android:name=".activity.AssignClassActivity"/>
         <activity android:name=".activity.AddNewUserActivity"/>
+        <activity android:name=".activity.AddNewAssignCourseActivity"/>
+        <activity android:name=".activity.AddNewClassActivity"/>
+        <activity android:name=".activity.AddNewCourseActivity"/>
+        <activity android:name=".activity.AddNewAssignClassActivity"/>
     </application>
 
 </manifest>

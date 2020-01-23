@@ -8,9 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.registrationkotlin.R
 import com.example.registrationkotlin.database.model.RegisterUsers
-import com.example.registrationkotlin.delegate.UserListDelegate
+import com.example.registrationkotlin.delegate.ItemListDelegate
 
-class RegisterUserAdapter (val userList: ArrayList<RegisterUsers>, val delegate: UserListDelegate) : RecyclerView.Adapter<RegisterUserAdapter.ViewHolder>() {
+class RegisterUserAdapter (val userList: ArrayList<RegisterUsers>, val delegate: ItemListDelegate) : RecyclerView.Adapter<RegisterUserAdapter.ViewHolder>() {
 
     //this method is returning the view for each item in the list
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RegisterUserAdapter.ViewHolder {
@@ -31,7 +31,7 @@ class RegisterUserAdapter (val userList: ArrayList<RegisterUsers>, val delegate:
     //the class is hodling the list view
     class ViewHolder(
         itemView: View,
-        delegate: UserListDelegate
+        delegate: ItemListDelegate
     ) : RecyclerView.ViewHolder(itemView) {
         private val delegate=delegate
         fun bindItems(user: RegisterUsers) {
@@ -48,7 +48,7 @@ class RegisterUserAdapter (val userList: ArrayList<RegisterUsers>, val delegate:
 
             liuserlist.setOnClickListener{
                 val userID=user.UserID
-                delegate?.sendUserID(userID)
+                delegate?.sendID(userID)
             }
 
         }

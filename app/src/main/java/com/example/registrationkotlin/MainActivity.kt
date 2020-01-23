@@ -4,8 +4,12 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import com.example.registrationkotlin.activity.AssignClassActivity
 import com.example.registrationkotlin.activity.AssignCourseActivity
+import com.example.registrationkotlin.activity.LoginActivity
 import com.example.registrationkotlin.activity.UserRegistrationActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -37,5 +41,27 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_logout -> {
+                var intent= Intent(this, LoginActivity::class.java)
+                val sharedPreferences=getSharedPreferences("userID", Context.MODE_PRIVATE)
+                val editor=sharedPreferences.edit()
+                editor.clear()
+                editor.commit()
+                startActivity(intent)
+                finish()
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }

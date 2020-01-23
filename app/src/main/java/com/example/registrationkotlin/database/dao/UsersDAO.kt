@@ -12,4 +12,8 @@ interface UsersDAO {
 
     @Query(value = "Select * from Users")
     fun getAllUsers() : List<Users>
+
+    @Query(value = "Select * from Users where Email=:email and Password=:password")
+    fun getUserByEmailAndPass(email: String,password:String) : List<Users>
+
 }
