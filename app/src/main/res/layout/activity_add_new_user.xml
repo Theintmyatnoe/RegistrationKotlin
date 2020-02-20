@@ -37,7 +37,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:inputType="textPersonName"
-                    android:id="@+id/edt_userName"/>
+                    android:maxLength="50"
+                    android:id="@+id/edt_userName" />
             </LinearLayout>
             <LinearLayout
                 android:layout_marginTop="5dp"
@@ -64,6 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:inputType="phone"
+                    android:maxLength="50"
                     android:id="@+id/edt_phone"/>
             </LinearLayout>
             <LinearLayout
@@ -90,6 +92,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
+                    android:maxLength="256"
                     android:inputType="textEmailAddress"
                     android:id="@+id/edt_email"/>
             </LinearLayout>
